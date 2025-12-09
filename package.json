@@ -1,0 +1,12 @@
+{
+  "name": "github-actions-demo-app",
+  "version": "1.0.0",
+  "description": "Sample NodeJS app for CI pipeline demonstration",
+  "main": "src/math.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
