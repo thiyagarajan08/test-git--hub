@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker Image from specific path
         run: |
-          docker build -t myapp-image:latest ./test-git--hub
+          docker build -t myapp-image:latest .
 
       - name: Tag Docker Image
         run: |
