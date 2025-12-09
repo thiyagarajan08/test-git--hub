@@ -1,0 +1,31 @@
+name: Container CI/CD Pipeline
+on: [push]
+
+env:
+  IMAGE_NAME: thiyaga
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker Image from specific path
+        run: |
+          docker build -t myapp-image:latest ./test-git--hub
+
+      - name: Tag Docker Image
+        run: |
+          docker tag $IMAGE_NAME-image:latest ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
+ 
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
