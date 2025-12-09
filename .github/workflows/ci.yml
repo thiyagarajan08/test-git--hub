@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker Image from specific path
         run: |
-          docker build -t $IMAGE_NAME:latest  
+          docker build -t $IMAGE_NAME:latest . 
 
       - name: Tag Docker Image
         run: |
