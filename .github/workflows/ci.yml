@@ -21,11 +21,11 @@ jobs:
 
       - name: Build Docker Image from specific path
         run: |
-          docker build -t myapp-image:latest . 
+          docker build -t myapp-image:latest  
 
       - name: Tag Docker Image
         run: |
-          docker tag $IMAGE_NAME-image:latest ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
+          docker tag $IMAGE_NAME:latest ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
  
       - name: Push Docker Image
         run: |
