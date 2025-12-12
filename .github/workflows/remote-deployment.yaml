@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.TARGET_SSH_KEY }}
           script: |
             echo "Pulling latest Docker image..."
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest 
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/thiyaga:latest 
 
             echo "Stopping old container (if exists)..."
             docker stop thiyaga || true
@@ -33,4 +33,5 @@ jobs:
 
 
             echo "Deployment complete!"
+
 
