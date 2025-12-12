@@ -1,5 +1,5 @@
 name: Container CI/CD Pipeline
-on: [push]
+on:# [push]
 
 env:
   IMAGE_NAME: thiyaga
