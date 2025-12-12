@@ -27,11 +27,12 @@ jobs:
 
             echo "Starting new container..."
             docker run -d \
-              --name $IMAGE_NAME \
+              --name thiyaga \
               -p 8080:8080 \
               ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
 
 
             echo "Deployment complete!"
+
 
 
