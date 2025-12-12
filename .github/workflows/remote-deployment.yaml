@@ -29,10 +29,11 @@ jobs:
             docker run -d \
               --name thiyaga \
               -p 8080:8080 \
-              ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:latest
+              ${{ secrets.DOCKERHUB_USERNAME }}/thiyaga:latest
 
 
             echo "Deployment complete!"
+
 
 
 
